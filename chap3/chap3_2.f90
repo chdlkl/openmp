@@ -15,7 +15,7 @@ Program test_firstprivate_and_lastprivate
   print*
   
   !$omp parallel do private( tid, i, j ) firstprivate( a, b ) lastprivate( b )
-  Do i = 1, m
+  Do i = 1, m  !.. 一般有几次循环，需要几个线程(当循环次数小于设置线程数的或是设备的总线程数)
     tid = omp_get_thread_num()
     write( *,'(1x,a,4(g0,2x),a,g0)' ) 'a = ', (a(j), j = 1, m), 'id = ', tid
     write( *,'(1x,a,4(g0,2x))' ) 'b = ', (b(j), j = 1, m)

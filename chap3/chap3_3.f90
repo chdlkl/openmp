@@ -10,6 +10,9 @@ Program test_threadprivate
   integer :: tid, a
 
   !$omp threadprivate( x )
+  !.. threadprivate子句将全局变量指定为私有变量后，此变量可以在前后多个并行域之间保持连续性
+  !.. 而且在退出并行域之后，子线程0的全局变量的值将会继承于后面串行域的同名变量
+  !** 值得注意的是: 并行域内，子线程0的全局变量的副本继承了并行区域外同名原始变量的值，而其他子线程的全局变量的副本则与并行域外同名变量无关
   call omp_set_num_threads(4) !// 设置线程数
   tid = omp_get_thread_num()  !// 获取当前线程号...主线程号为0
   

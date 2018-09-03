@@ -1,4 +1,4 @@
-program chap2_1
+program hello
   implicit none
   
   !.. 串行区域主线程为0，输出一次hello
@@ -13,5 +13,5 @@ program chap2_1
 
   write( *,'(1x,a)' ) '第二个串行区'
   write( *,'(1x,a)' ) 'hello!'
-end program chap2_1
+end program hello
   

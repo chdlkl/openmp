@@ -1,4 +1,4 @@
-Program chap2_2
+Program hi_parallel
   use omp_lib
   implicit none
   integer :: tid, mcpu
@@ -21,4 +21,4 @@ Program chap2_2
   write( *,'(1x,a)' ) 'after paralled......'
   write( *,'(1x,a,i2,a,i2,a)' ) 'hi from thread ', tid, ' in ', mcpu, 'CPUs!'
   
-End program chap2_2
+End program hi_parallel

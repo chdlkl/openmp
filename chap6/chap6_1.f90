@@ -23,3 +23,6 @@ End program barrier_parallel
 !.. 3. 因为第二项任务(统计)与第一项任务(输出hellr from thread id)存在数据相关
 !..    所以必须等全部线程处理完第一个任务后才可以由主线程去执行第二项任务
 !..    如果各线程在打印输出后不进行同步，那么，在各线程未完成打印输出时，就出现线程总数统计情况
+
+!.. 下列openmp结构之后有隐藏的barrier
+!.. 1. end parallel 2. end do 3. end sections 4. end critical 5. end single
